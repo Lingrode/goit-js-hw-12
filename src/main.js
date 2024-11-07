@@ -30,7 +30,7 @@ let searchValue = '';
 let totalHits = 0;
 
 form.addEventListener('submit', handleSubmit);
-loadMoreBtn.addEventListener('click', () => createGallery());
+loadMoreBtn.addEventListener('click', onLoadMore);
 
 async function handleSubmit(event) {
   event.preventDefault();
@@ -102,4 +102,11 @@ async function createGallery() {
   } finally {
     loader.style.display = 'none';
   }
+}
+
+function onLoadMore() {
+  loadMoreBtn.setAttribute('disabled', true);
+  createGallery().finally(() => {
+    loadMoreBtn.removeAttribute('disabled');
+  });
 }
