@@ -50,8 +50,6 @@ async function handleSubmit(event) {
 
   await createGallery();
 
-  console.log(totalHits);
-
   if (totalHits > 15) {
     loadMoreBtn.classList.remove('hide');
   }

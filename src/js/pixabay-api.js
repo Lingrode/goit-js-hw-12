@@ -1,4 +1,3 @@
-import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import axios from 'axios';
 
@@ -29,10 +28,6 @@ const fetchImages = async query => {
   try {
     const response = await axios.get(`${BASE_URL}/?${searchParams}`);
     if (response.data.hits.length === 0) {
-      // iziToast.error({
-      //   message:
-      //     'Sorry, there are no images matching your search query. Please try again!',
-      // });
       return null;
     }
 
