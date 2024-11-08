@@ -5,6 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import fetchImages from './js/pixabay-api';
 import createMarkup from './js/render-functions';
 import iconError from './img/icon-error.svg';
+import iconInfo from './img/icon-info.svg';
 
 const form = document.querySelector('.form');
 const searchInput = form.querySelector('input[name="search"]');
@@ -92,6 +93,8 @@ async function createGallery() {
       loadMoreBtn.classList.add('hide');
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
+        backgroundColor: '#9ddeff',
+        iconUrl: `${iconInfo}`,
       });
     }
   } catch (err) {
